@@ -3,16 +3,15 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
-
-inquirer
-    .prompt([{
+const questions = () =>
+    inquirer.prompt([{
             type: 'input',
             message: 'Enter a title for your project:',
             name: 'title',
         },
         {
             type: 'input',
-            message: 'Enter a description for your project:',
+            message: 'Give a description for your project in a few sentences:',
             name: 'descrip',
         },
         {
@@ -22,33 +21,33 @@ inquirer
         },
         {
             type: 'input',
-            message: 'Enter the usage for your project:',
+            message: 'What should the user know about using your project?',
             name: 'usage',
         },
         {
             type: 'list',
-            message: 'What license did you use?',
+            message: 'What license does your project have?',
             choices: ['MIT', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla', 'Apache'],
             name: 'license',
         },
         {
             type: 'input',
-            message: 'Who would you like to add as contributors to this project?',
+            message: 'What should the user know about contributing to your project?',
             name: 'contri',
         },
         {
             type: 'input',
-            message: 'What languages do you know?',
+            message: 'How does the user test this project?',
             name: 'tests',
         },
         {
             type: 'input',
-            message: 'What is your github?',
+            message: 'What is your github username?',
             name: 'github',
         },
         {
             type: 'input',
-            message: 'What is your email?',
+            message: 'What is your email address?',
             name: 'email',
         },
 
