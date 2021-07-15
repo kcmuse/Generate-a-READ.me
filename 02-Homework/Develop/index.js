@@ -27,7 +27,7 @@ const questions = () =>
         {
             type: 'list',
             message: 'What license does your project have?',
-            choices: ['MIT', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla', 'Apache'],
+            choices: ['MIT', 'GNU LGPLv3', 'Mozilla', 'Apache'],
             name: 'license',
         },
         {
@@ -37,7 +37,7 @@ const questions = () =>
         },
         {
             type: 'input',
-            message: 'How does the user test this project?',
+            message: 'What is the command to test this project?',
             name: 'tests',
         },
         {
@@ -51,20 +51,13 @@ const questions = () =>
             name: 'email',
         },
 
-    ])
-    .then((answers) => {
-        const readmeContent = generateMarkdown(answers);
-
-        fs.writeFile('README.md', readmeContent, (err) =>
-            err ? console.log(err) : console.log('Successfully created README.md!')
-        );
-    })
+    ]);
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+// function init() {}
 
 // Function call to initialize app
-init();
+// init();
