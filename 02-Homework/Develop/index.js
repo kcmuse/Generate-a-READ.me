@@ -5,7 +5,7 @@ const generateMarkdown = (answers) =>
     `
 # ${answers.title}
 
-[![GitHub License](https://img.shields.io/badge/license-${answers.license}-blue.svg)]
+![GitHub License](https://img.shields.io/badge/license-${answers.license}-blue.svg)
 
 ## Description
 
@@ -45,7 +45,7 @@ ${answers.tests}
 
 ## License
 
-${answers.license} [![License Info](https://opensource.org/licenses/${answers.license}]
+${answers.license} ![License Info](https://opensource.org/licenses/${answers.license}
 
 ## Questions
 
@@ -78,7 +78,7 @@ inquirer.prompt([{
     {
         type: 'list',
         message: 'What license does your project have?',
-        choices: ['MIT', 'GNU LGPLv3', 'Mozilla', 'Apache'],
+        choices: ['MIT', 'MPL 2.0', 'Apache 2.0'],
         name: 'license',
     },
     {
@@ -102,7 +102,14 @@ inquirer.prompt([{
         name: 'email',
     },
 
-]);
+]).then((answers) => {
+    const readMeContent = generateMarkdown(answers);
+
+    fs.writeFile('README.md', readMeContent, (err) =>
+        err ? console.log(err) : console.log('Successfully created a README.md!')
+    );
+});
+
 
 
 
