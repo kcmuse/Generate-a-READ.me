@@ -47,8 +47,8 @@ ${answers.tests}
 ## Questions
 
 For all questions please reach out to me at my email or github!
-* [${answers.github}](https://github.com/${answers.github})
-* [${answers.email}](mailto:${answers.email})
+* [GitHub](https://github.com/${answers.github})
+* [eMail](mailto:${answers.email})
 
 `;
 
