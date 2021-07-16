@@ -21,14 +21,14 @@ ${answers.descrip}
 
 ## Installation
 
-Run the following command to install dependencies:
+Below is the instructions to install the dependencies:
 
 \`\`\`
 ${answers.install}
 \`\`\`
 
 ## Usage
-
+Provide instructions and examples for use. Include screenshots as needed (This is not done for you)
 ${answers.usage}
 
 ## Contribution
@@ -43,13 +43,10 @@ For testing, run the following command:
 ${answers.tests}
 \`\`\`
 
-## License
-
-${answers.license} ![License Info](https://opensource.org/licenses/${answers.license}
 
 ## Questions
 
-For any questions, please contact me by email or through my GitHub page
+For all questions please reach out to me at my email or github!
 * [${answers.github}](https://github.com/${answers.github})
 * [${answers.email}](mailto:${answers.email})
 
@@ -62,23 +59,24 @@ inquirer.prompt([{
     },
     {
         type: 'input',
-        message: 'Give a description for your project in a few sentences:',
+        message: 'In a few sentences tell me about your project:',
         name: 'descrip',
     },
     {
         type: 'input',
-        message: 'What should the user to do install this project?',
+        message: 'What are the steps required to install your project?',
         name: 'install',
     },
     {
         type: 'input',
-        message: 'What should the user know about using your project?',
+        message: 'Provide instructions for use:',
         name: 'usage',
+        default: `You will need to insert your own images and videos`
     },
     {
         type: 'list',
         message: 'What license does your project have?',
-        choices: ['MIT', 'MPL 2.0', 'Apache 2.0'],
+        choices: ['MIT', 'MPL2.0', 'Apache2.0', `LGPLv3`],
         name: 'license',
     },
     {
@@ -109,15 +107,3 @@ inquirer.prompt([{
         err ? console.log(err) : console.log('Successfully created a README.md!')
     );
 });
-
-
-
-
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
